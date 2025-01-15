@@ -13,16 +13,23 @@ public class GuessNumber {
         System.out.println("Enter you guess: ");
 
         while(guess != randomNumber){
-            if(guess > randomNumber){
+            guess= scanner.nextInt();
+            attempts++;
 
+            if(guess > randomNumber){
+                System.out.println("Guess Too high! Try again:");
             }
-            if(guess < randomNumber){
+            else if(guess < randomNumber){
+                System.out.println("Guess Too Low! Try again:");
 
             }
             else{
+                System.out.println("Congratulations! You've guessed the correct number: " + randomNumber);
+                System.out.println("It took you " + attempts + " attempts.");
 
             }
         }
+        scanner.close();
 
     }
 }
